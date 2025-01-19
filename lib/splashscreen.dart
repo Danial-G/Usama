@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Login.dart';
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,10 @@ class WelcomeScreen extends StatelessWidget {
           child: ElevatedButton(
       
                 onPressed: () {
-                  // Handle navigation
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
                 },
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.purple),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'ProductScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -110,7 +111,10 @@ class LoginScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 30), // Remove horizontal padding for full width
       ),
       onPressed: () {
-        // Handle login action
+       Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProductPage()),
+                    );
       },
       child: Text(
         'Login',

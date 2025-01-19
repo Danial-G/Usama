@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'cartPage.dart';
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -137,6 +137,7 @@ class ProductPage extends StatelessWidget {
                   title: 'Dinner SET',
                   subtitle: index % 2 == 0 ? '(Must choose level)' : '',
                   price: 'PKR ${[50067, 30099, 27032, 34398][index]}',
+                  context:context,
                 );
               },
             ),
@@ -228,6 +229,7 @@ class ProductPage extends StatelessWidget {
     required String title,
     required String subtitle,
     required String price,
+    context
   }) {
     return Card(
       color: Colors.white,
@@ -289,7 +291,10 @@ class ProductPage extends StatelessWidget {
                       backgroundColor: const Color.fromRGBO(156, 39, 176, 1),
                     ),
                     onPressed: () {
-                      // Handle add to cart action
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CartPage()),
+                    );
                     },
                     child: Icon(Icons.add, color: Colors.white),
                   ),
